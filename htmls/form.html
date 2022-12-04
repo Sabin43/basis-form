@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="form.css">
+
+        <script type ="text/javascript">
+            function validate(){
+                var email = document.getElementById("email");
+                var password = document.getElementById("password");
+               
+                if(email.value.trim()==""){
+                   // alert("email is blank");
+                    email.style.border ="solid 0.5px red";
+                    return false;
+                }
+                else if(password.value.trim()==""){
+                    //alert("password is blank");
+                    password.style.border ="solid 0.5px red";
+                    return false;
+                }
+                else if(password.value.trim().length<4){
+                    //alert("password cant be less than 4 characters");
+                    password.style.border ="solid 0.5px red";
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <div class="mainDiv">
+            <div class ="one">
+             <header><b> ROSIA </b></header>
+
+                <div class="oneA">
+                    <form id ="form" onsubmit ="return validate();"action="dash.html" method="get">
+                        <label for="email" id="lblemail"> Email</label><br>
+                        <input type="email" id="email" name="email"  ><br>
+                        <label for="password" id="lblpwd">Password</label><br>
+                        <input type="password" id="password" name="password"  ><br><br>
+                        <input type="submit" value="SIGN IN">
+                    </form>
+
+                    <div id = "error"></div>
+
+                </div>
+            <footer> &copy; 2019 Evolve Pvt Ltd </footer>
+            </div>
+            
+            <div class="two">
+                <img src="myimage.jpg" alt="image">
+            </div>
+            
+        </div>
+    </body>
+</html>
